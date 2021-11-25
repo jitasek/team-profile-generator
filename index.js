@@ -7,45 +7,51 @@ const generateTeam = require("./src/generateTeam");
 
 team = [];
 
-// const managerQuestions = () => {
-//   inquirer
-//     .prompt([
-//       {
-//         type: "input",
-//         name: "name",
-//         message: "What is the team manager's name?",
-//       },
-//       {
-//         type: "input",
-//         name: "id",
-//         message: "What is the team manager's ID?",
-//       },
-//       {
-//         type: "input",
-//         name: "email",
-//         message: "What is the team manager's e-mail address?",
-//       },
-//       {
-//         type: "input",
-//         name: "officeNumber",
-//         message: "What is the team manager's office number?",
-//       },
-//       {
-//         type: "list",
-//         name: "addTeamMember",
-//         message: "Which team member/s would you like to add?",
-//         choices: [
-//           "Engineer",
-//           "Intern",
-//           "I don't want to add any more memebers.",
-//         ],
-//       },
-//     ])
-//     .then((managerAnswers) => {
-//       console.log(managerAnswers);
-//     });
-// };
-// managerQuestions();
+const managerQuestions = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the team manager's name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the team manager's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the team manager's e-mail address?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the team manager's office number?",
+      },
+      {
+        type: "list",
+        name: "addTeamMember",
+        message: "Which team member/s would you like to add?",
+        choices: [
+          "Engineer",
+          "Intern",
+          "I don't want to add any more memebers.",
+        ],
+      },
+    ])
+    .then((managerAnswers) => {
+      const manager = new Manager(
+        managerAnswers.name,
+        managerAnswers.id,
+        managerAnswers.email,
+        managerAnswers.officeNumber
+      );
+      console.log(manager);
+    });
+};
+managerQuestions();
 
 // const engineerQuestions = () => {
 //   inquirer
@@ -87,42 +93,42 @@ team = [];
 // };
 // engineerQuestions();
 
-const internQuestions = () => {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "What is the intern's name?",
-      },
-      {
-        type: "input",
-        name: "id",
-        message: "What is the intern's ID?",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is the intern's e-mail address?",
-      },
-      {
-        type: "input",
-        name: "school",
-        message: "What is the intern's school?",
-      },
-      {
-        type: "list",
-        name: "addTeamMember",
-        message: "Which team member/s would you like to add?",
-        choices: [
-          "Engineer",
-          "Intern",
-          "I don't want to add any more memebers.",
-        ],
-      },
-    ])
-    .then((internAnswers) => {
-      console.log(internAnswers);
-    });
-};
-internQuestions();
+// const internQuestions = () => {
+//   inquirer
+//     .prompt([
+//       {
+//         type: "input",
+//         name: "name",
+//         message: "What is the intern's name?",
+//       },
+//       {
+//         type: "input",
+//         name: "id",
+//         message: "What is the intern's ID?",
+//       },
+//       {
+//         type: "input",
+//         name: "email",
+//         message: "What is the intern's e-mail address?",
+//       },
+//       {
+//         type: "input",
+//         name: "school",
+//         message: "What is the intern's school?",
+//       },
+//       {
+//         type: "list",
+//         name: "addTeamMember",
+//         message: "Which team member/s would you like to add?",
+//         choices: [
+//           "Engineer",
+//           "Intern",
+//           "I don't want to add any more memebers.",
+//         ],
+//       },
+//     ])
+//     .then((internAnswers) => {
+//       console.log(internAnswers);
+//     });
+// };
+// internQuestions();
