@@ -111,51 +111,67 @@ const engineerQuestions = () => {
           break;
         case "Intern":
           internQuestions();
+          break;
         case "I don't want to add any more members.":
           writeToFile("dist/team.html", generateTeam(team));
       }
     });
 };
 
-// const internQuestions = () => {
-//   inquirer
-//     .prompt([
-//       {
-//         type: "input",
-//         name: "name",
-//         message: "What is the intern's name?",
-//       },
-//       {
-//         type: "input",
-//         name: "id",
-//         message: "What is the intern's ID?",
-//       },
-//       {
-//         type: "input",
-//         name: "email",
-//         message: "What is the intern's e-mail address?",
-//       },
-//       {
-//         type: "input",
-//         name: "school",
-//         message: "What is the intern's school?",
-//       },
-//       {
-//         type: "list",
-//         name: "addTeamMember",
-//         message: "Which team member/s would you like to add?",
-//         choices: [
-//           "Engineer",
-//           "Intern",
-//           "I don't want to add any more members.",
-//         ],
-//       },
-//     ])
-//     .then((internAnswers) => {
-//       console.log(internAnswers);
-//     });
-// };
-// internQuestions();
+const internQuestions = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the intern's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the intern's e-mail address?",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "What is the intern's school?",
+      },
+      {
+        type: "list",
+        name: "addTeamMember",
+        message: "Which team member/s would you like to add?",
+        choices: [
+          "Engineer",
+          "Intern",
+          "I don't want to add any more members.",
+        ],
+      },
+    ])
+    .then((internAnswers) => {
+      const intern = new Intern(
+        internAnswers.name,
+        internAnswers.id,
+        internAnswers.email,
+        internAnswers.school
+      );
+      team.push(intern);
+      switch (internAnswers.addTeamMember) {
+        case "Engineer":
+          engineerQuestions();
+          break;
+        case "Intern":
+          internQuestions();
+          break;
+        case "I don't want to add any more members.":
+          writeToFile("/dist/team.html", generateTeam(team));
+      }
+    });
+};
 
 managerQuestions();
 
