@@ -4,6 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/generateTeam");
+const { ensureExpectedIsNonNegativeInteger } = require("jest-matcher-utils");
 
 team = [];
 
@@ -97,7 +98,22 @@ const engineerQuestions = () => {
       },
     ])
     .then((engineerAnswers) => {
-      console.log(engineerAnswers);
+      const engineer = new Engineer(
+        engineerAnswers.name,
+        engineerAnswers.id,
+        engineerAnswers.email,
+        engineerAnswers.github
+      );
+      team.push(engineer);
+      switch (engineerAnswers.addTeamMember) {
+        case "Engineer":
+          engineerQuestions();
+          break;
+        case "Intern":
+          internQuestions();
+        case "I don't want to add any more members.":
+          writeToFile("dist/team.html", generateTeam(team));
+      }
     });
 };
 
