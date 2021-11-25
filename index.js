@@ -47,28 +47,68 @@ team = [];
 // };
 // managerQuestions();
 
-const engineerQuestions = () => {
+// const engineerQuestions = () => {
+//   inquirer
+//     .prompt([
+//       {
+//         type: "input",
+//         name: "name",
+//         message: "What is the engineer's name?",
+//       },
+//       {
+//         type: "input",
+//         name: "id",
+//         message: "What is the engineer's ID?",
+//       },
+//       {
+//         type: "input",
+//         name: "email",
+//         message: "What is the engineer's e-mail address?",
+//       },
+//       {
+//         type: "input",
+//         name: "github",
+//         message: "What is the engineer's GitHub username?",
+//       },
+//       {
+//         type: "list",
+//         name: "addTeamMember",
+//         message: "Which team member/s would you like to add?",
+//         choices: [
+//           "Engineer",
+//           "Intern",
+//           "I don't want to add any more memebers.",
+//         ],
+//       },
+//     ])
+//     .then((engineerAnswers) => {
+//       console.log(engineerAnswers);
+//     });
+// };
+// engineerQuestions();
+
+const internQuestions = () => {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "What is the engineer's name?",
+        message: "What is the intern's name?",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the engineer's ID?",
+        message: "What is the intern's ID?",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the engineer's e-mail address?",
+        message: "What is the intern's e-mail address?",
       },
       {
         type: "input",
-        name: "email",
-        message: "What is the engineer's GitHub username?",
+        name: "school",
+        message: "What is the intern's school?",
       },
       {
         type: "list",
@@ -81,8 +121,8 @@ const engineerQuestions = () => {
         ],
       },
     ])
-    .then((engineerAnswers) => {
-      console.log(engineerAnswers);
+    .then((internAnswers) => {
+      console.log(internAnswers);
     });
 };
-engineerQuestions();
+internQuestions();
