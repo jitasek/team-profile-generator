@@ -37,7 +37,7 @@ const managerQuestions = () => {
         choices: [
           "Engineer",
           "Intern",
-          "I don't want to add any more memebers.",
+          "I don't want to add any more members.",
         ],
       },
     ])
@@ -48,50 +48,58 @@ const managerQuestions = () => {
         managerAnswers.email,
         managerAnswers.officeNumber
       );
-      console.log(manager);
+      team.push(manager);
+      switch (managerAnswers.addTeamMember) {
+        case "Engineer":
+          engineerQuestions();
+          break;
+        case "Intern":
+          internQuestions();
+          break;
+        case "I don't want to add any more members.":
+          writeToFile("dist/team.html", generateTeam(team));
+      }
     });
 };
-managerQuestions();
 
-// const engineerQuestions = () => {
-//   inquirer
-//     .prompt([
-//       {
-//         type: "input",
-//         name: "name",
-//         message: "What is the engineer's name?",
-//       },
-//       {
-//         type: "input",
-//         name: "id",
-//         message: "What is the engineer's ID?",
-//       },
-//       {
-//         type: "input",
-//         name: "email",
-//         message: "What is the engineer's e-mail address?",
-//       },
-//       {
-//         type: "input",
-//         name: "github",
-//         message: "What is the engineer's GitHub username?",
-//       },
-//       {
-//         type: "list",
-//         name: "addTeamMember",
-//         message: "Which team member/s would you like to add?",
-//         choices: [
-//           "Engineer",
-//           "Intern",
-//           "I don't want to add any more memebers.",
-//         ],
-//       },
-//     ])
-//     .then((engineerAnswers) => {
-//       console.log(engineerAnswers);
-//     });
-// };
-// engineerQuestions();
+const engineerQuestions = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the engineer's name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the engineer's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the engineer's e-mail address?",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's GitHub username?",
+      },
+      {
+        type: "list",
+        name: "addTeamMember",
+        message: "Which team member/s would you like to add?",
+        choices: [
+          "Engineer",
+          "Intern",
+          "I don't want to add any more members.",
+        ],
+      },
+    ])
+    .then((engineerAnswers) => {
+      console.log(engineerAnswers);
+    });
+};
 
 // const internQuestions = () => {
 //   inquirer
@@ -123,7 +131,7 @@ managerQuestions();
 //         choices: [
 //           "Engineer",
 //           "Intern",
-//           "I don't want to add any more memebers.",
+//           "I don't want to add any more members.",
 //         ],
 //       },
 //     ])
@@ -132,3 +140,12 @@ managerQuestions();
 //     });
 // };
 // internQuestions();
+
+managerQuestions();
+
+function writeToFile(filename, data) {
+  fs.writeFile(filename, data, (err) => {
+    if (err) throw err;
+    console.log("File was saved.");
+  });
+}
