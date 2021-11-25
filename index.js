@@ -7,28 +7,68 @@ const generateTeam = require("./src/generateTeam");
 
 team = [];
 
-const managerQuestions = () => {
+// const managerQuestions = () => {
+//   inquirer
+//     .prompt([
+//       {
+//         type: "input",
+//         name: "name",
+//         message: "What is the team manager's name?",
+//       },
+//       {
+//         type: "input",
+//         name: "id",
+//         message: "What is the team manager's ID?",
+//       },
+//       {
+//         type: "input",
+//         name: "email",
+//         message: "What is the team manager's e-mail address?",
+//       },
+//       {
+//         type: "input",
+//         name: "officeNumber",
+//         message: "What is the team manager's office number?",
+//       },
+//       {
+//         type: "list",
+//         name: "addTeamMember",
+//         message: "Which team member/s would you like to add?",
+//         choices: [
+//           "Engineer",
+//           "Intern",
+//           "I don't want to add any more memebers.",
+//         ],
+//       },
+//     ])
+//     .then((managerAnswers) => {
+//       console.log(managerAnswers);
+//     });
+// };
+// managerQuestions();
+
+const engineerQuestions = () => {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "What is the team manager's name?",
+        message: "What is the engineer's name?",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the team manager's ID?",
+        message: "What is the engineer's ID?",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the team manager's e-mail address?",
+        message: "What is the engineer's e-mail address?",
       },
       {
         type: "input",
-        name: "officeNumber",
-        message: "What is the team manager's office number?",
+        name: "email",
+        message: "What is the engineer's GitHub username?",
       },
       {
         type: "list",
@@ -41,8 +81,8 @@ const managerQuestions = () => {
         ],
       },
     ])
-    .then((managerAnswers) => {
-      console.log(managerAnswers);
+    .then((engineerAnswers) => {
+      console.log(engineerAnswers);
     });
 };
-managerQuestions();
+engineerQuestions();

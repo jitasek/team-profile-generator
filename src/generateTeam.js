@@ -13,6 +13,7 @@ const Intern = require("../lib/Intern");
 // function for generating Intern card
 
 // function that generates the team
-//function generateTeam(team) {
-//console.log(team);
-//}
+function generateTeam(team) {
+  console.log(team);
+}
+module.exports = generateTeam;
