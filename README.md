@@ -59,8 +59,12 @@ WHEN I select the intern option, I am prompted to enter the intern’s name, ID,
 
 WHEN I decide to finish building my team, I exit the application, and the HTML is generated.
 
-## Screenshot
+## Screenshots
 
 <br>
 
-![Image](./assets/images/.........)
+![Image](./images/team-page.png)
+
+![Image](./images/team-page-responsivness.png)
+
+![Image](./images/team-generator-app.png)
