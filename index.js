@@ -58,7 +58,10 @@ const managerQuestions = () => {
           internQuestions();
           break;
         case "I don't want to add any more members.":
-          writeToFile("dist/team.html", generateTeam(team));
+          writeToFile(
+            "../team-profile-generator/dist/team.html",
+            generateTeam(team)
+          );
       }
     });
 };
@@ -113,7 +116,10 @@ const engineerQuestions = () => {
           internQuestions();
           break;
         case "I don't want to add any more members.":
-          writeToFile("dist/team.html", generateTeam(team));
+          writeToFile(
+            "../team-profile-generator/dist/team.html",
+            generateTeam(team)
+          );
       }
     });
 };
@@ -168,7 +174,10 @@ const internQuestions = () => {
           internQuestions();
           break;
         case "I don't want to add any more members.":
-          writeToFile("/dist/team.html", generateTeam(team));
+          writeToFile(
+            "../team-profile-generator/dist/team.html",
+            generateTeam(team)
+          );
       }
     });
 };

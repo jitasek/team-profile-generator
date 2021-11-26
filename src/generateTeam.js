@@ -2,11 +2,43 @@ const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
-// function that generates card for Manager, Engineer and Intern
-//function generateTeamCards(team) {
-//let cards = [];
-// loop through team and generate relevant cards for each team member
-//}
+// function that generates card for team (Manager and/or Engineer and/or Intern)
+function generateTeamCards(team) {
+  let cards = [];
+  // loop through team members and generate relevant card for each
+  for (let i = 0; i < team.length; i++) {
+    const teamMember = team[i];
+    switch (teamMember.getRole()) {
+      case "Manager":
+        const manager = new Manager(
+          teamMember.name,
+          teamMember.id,
+          teamMember.email,
+          teamMember.officeNumber
+        );
+        cards.push(generateManagerCard(manager));
+        break;
+      case "Engineer":
+        const engineer = new Engineer(
+          teamMember.name,
+          teamMember.id,
+          teamMember.email,
+          teamMember.github
+        );
+        cards.push(generateEngineerCard(engineer));
+        break;
+      case "Intern":
+        const intern = new Intern(
+          teamMember.name,
+          teamMember.id,
+          teamMember.email,
+          teamMember.school
+        );
+        cards.push(generateInternCard(intern));
+    }
+  }
+  return cards.join(``);
+}
 
 // function for generating Manager card
 let generateManagerCard = (Manager) => {
@@ -94,7 +126,7 @@ function generateTeam(team) {
         </div>
       </div>
       <div class="d-flex flex-row flex-wrap justify-content-center">
-        ${generateCards(team)}
+        ${generateTeamCards(team)}
       </div>
     </body>
   </html>`;
