@@ -28,12 +28,40 @@ let generateManagerCard = (Manager) => {
 };
 // function for generating Engineer card
 let generateEngineerCard = (Engineer) => {
-  return ``;
+  return `<div class="card m-1 shadow" style="width: 18rem">
+  <div class="card-header bg-info">
+    <h3 class="card-title">${Engineer.getName()}</h3>
+    <h6 class="card-text">${Engineer.getRole()}</h6>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${Engineer.getId()}</li>
+      <li class="list-group-item">Email: ${Engineer.getEmail()}</li>
+      <li class="list-group-item">
+        GitHub username: ${Engineer.getGitHub()}
+      </li>
+    </ul>
+  </div>
+</div>`;
 };
 // function for generating Intern card
 
 let generateInternCard = (Intern) => {
-  return ``;
+  return `<div class="card m-1 shadow" style="width: 18rem">
+  <div class="card-header bg-info">
+    <h3 class="card-title">${Intern.getName()}</h3>
+    <h6 class="card-text">${Intern.getRole()}</h6>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${Intern.getId()}</li>
+      <li class="list-group-item">Email: ${Intern.getEmail()}</li>
+      <li class="list-group-item">
+        School: ${Intern.getSchool()}
+      </li>
+    </ul>
+  </div>
+</div>`;
 };
 
 // function that generates the team
