@@ -14,7 +14,7 @@ The purpose of this app is to practise unit testing for every part of code, and 
 <br>
 Link to the deployed app: [here](https://jitasek.github.io/.........)
 <br>
-Link to the video guide: [here](https://drive.google.com/.........)
+Link to the video guide: [here](https://drive.google.com/file/d/1vLpIIPBYK2xNuOXmn9qb6-GwUH_BTb48/view)
 
 ## User Story
 
