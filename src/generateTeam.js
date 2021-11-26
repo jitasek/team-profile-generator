@@ -9,8 +9,32 @@ const Intern = require("../lib/Intern");
 //}
 
 // function for generating Manager card
+let generateManagerCard = (Manager) => {
+  return `<div class="card m-1 shadow" style="width: 18rem">
+    <div class="card-header bg-info">
+      <h3 class="card-title">${Manager.getName()}</h3>
+      <h6 class="card-text">${Manager.getRole()}</h6>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: ${Manager.getId()}</li>
+        <li class="list-group-item">Email: ${Manager.getEmail()}</li>
+        <li class="list-group-item">
+          Office Number: ${Manager.getOfficeNumber()}
+        </li>
+      </ul>
+    </div>
+  </div>`;
+};
 // function for generating Engineer card
+let generateEngineerCard = (Engineer) => {
+  return ``;
+};
 // function for generating Intern card
+
+let generateInternCard = (Intern) => {
+  return ``;
+};
 
 // function that generates the team
 function generateTeam(team) {
@@ -28,10 +52,10 @@ function generateTeam(team) {
       ></script>
       <!-- bootstrap CSS link -->
       <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-        crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
       />
       <title>Our Team</title>
     </head>
