@@ -14,7 +14,9 @@ The purpose of this app is to practise unit testing for every part of code, and 
 <br>
 Link to the deployed app: [here](https://jitasek.github.io/team-profile-generator/)
 <br>
-Link to the video guide: [here](https://drive.google.com/file/d/1vLpIIPBYK2xNuOXmn9qb6-GwUH_BTb48/view)
+Link to the video guide for invoking the app from command line: [here](https://drive.google.com/file/d/1vLpIIPBYK2xNuOXmn9qb6-GwUH_BTb48/view)
+<br>
+Link to the video guide for all four tests passing + demo of the generated team.html: [here](https://drive.google.com/file/d/1i0gL29iK7oKwt3SX9paNYDh9JIYQ1tvV/view)
 
 ## User Story
 
